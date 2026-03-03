@@ -13,6 +13,7 @@ export const handleRoom = (socket: Socket) => {
   };
 
   const handleJoinRoom = (requestedJoinRoomId: string) => {
+    console.log("Room joined with ID: ", requestedJoinRoomId);
     if (rooms[requestedJoinRoomId]) {
       rooms[requestedJoinRoomId].push(socket.id); // Push Socket Id to the room they belongs to
 

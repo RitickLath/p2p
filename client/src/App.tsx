@@ -1,17 +1,12 @@
 import { useContext, useEffect } from "react";
 import { socketContext } from "./contexts/socketContext";
-import CreateRoom from "./components/CreateRoom";
+
+import Layout from "./layout";
 
 const App = () => {
-  const { socket } = useContext(socketContext);
-
-  useEffect(() => {
-    socket.emit("join", { name: "Ritick" });
-  }, []);
-
   return (
     <div>
-      <CreateRoom />
+      <Layout />
     </div>
   );
 };
