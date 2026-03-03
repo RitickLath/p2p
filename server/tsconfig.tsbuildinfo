@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/config/serverconfig.ts"],"version":"5.9.3"}
+{"root":["./src/index.ts","./src/config/serverconfig.ts","./src/controller/handler.ts"],"version":"5.9.3"}

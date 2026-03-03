@@ -2,6 +2,7 @@ import express from "express";
 import http from "http";
 import { PORT } from "./config/serverConfig.js";
 import { Server } from "socket.io";
+import { handleRoom } from "./controller/handler.js";
 
 const app = express();
 
@@ -14,9 +15,7 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
   console.log("User connected with socket Id: ", socket.id);
 
-  socket.on("join", (data: any) => {
-    console.log(data);
-  });
+  handleRoom(socket); // OFF LOADED ALL THE TASKS OF HANDLING EVENT
 
   socket.on("disconnect", () => {
     console.log("User disconnected", socket.id);
